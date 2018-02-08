@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div id="navbar" class="navbar-fixed"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col s12 m6 13" id="container-left">
+
+            </div>
+            <div class="col s12 m6 13 right" id="container-right">
+                <div class="row">
+                    <form>
+                        <div class="input-field">
+                            <input list="search-res" required placeholder="Search Your City Here!" id="search"><i class="material-icons"
+                                style="cursor:pointer" id="search-hit">search</i>
+                            <datalist id="search-res" onchange="console.log(this.value)">
+                            </datalist>
+                        </div>
+                    </form>
+                </div>
+                <div class="row" id="weather-details">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer" class="page-footer"></footer>
+    <script src="./dist/app.bundle.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav();
+        })
+    </script>
+</body>
+
+</html>

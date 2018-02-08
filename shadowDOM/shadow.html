@@ -1,0 +1,56 @@
+<!--<html>
+
+<head>
+    <script>
+        function changeShadow() {
+           alert( document.getElementById("abc").value);
+            var  shadow  =  document.getElementById("xxx").attachShadow({
+                mode:   "closed"
+            });
+
+            shadow.innerHTML  =  '<span id="sp">Here is some new text</span>';
+            shadow.innerHTML  +=  '<style>span { color: red; }</style>';
+            // document.getElementById("xxx").text                        
+        }
+        // function changeShadow() {
+        //     var showShadow = false;
+        //     var  shadow  =  document.getElementById("element").attachShadow({
+        //         mode:   "open"
+        //     });
+        // }
+    </script>
+</head>
+
+<body onload="myFunction()">
+  <div>
+     <span id="abc"> fjhfsdjh</span>
+  </div>
+    <button onclick="changeShadow()">Click Here</button>
+        </body>
+
+</html>-->
+
+
+<html>
+
+<head>
+<script>
+function changeShadow()  {
+    console.log('xyz');
+var shadow = document.getElementById("element").attachShadow({
+mode: "closed"
+});
+
+shadow.innerHTML = '<span id="sp">Here is some new text</span>';
+shadow.innerHTML += '<style>span { color: red; }</style>';
+document.getElementById("element").text
+}
+</script>
+</head>
+
+<body onload="myFunction()">
+<p id="element">abcd</p>
+<button onclick="changeShadow()">Click Here</button>
+</body>
+
+</html> 

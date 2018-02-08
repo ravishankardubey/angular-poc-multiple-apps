@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    <title></title>
+</head>
+<body ng-controller="UserListCtrl">
+Search: <input ng-model="user">
+<div class="span10">
+<ul class="users">
+    <li ng-repeat="user in users | filter:user">
+        <div ng-click="selectUser()">
+            <label ng-show="showLabel" style="float:left;">{{user.username}}</label> <input type="text" ng-show="showEdit" ng-model="user.username"/>
+            <label ng-show="showLabel" style="float:left;">{{user.password}}</label> <input type="text" ng-show="showEdit" ng-model="user.password"/>
+            <label ng-show="showLabel" style="float:left;">{{user.email}}</label> <input type="text" ng-show="showEdit" ng-model="user.email"/>
+            <button class="btn btn-primary" ng-click="update()" ng-show="showEdit">수정</button>
+            <button class="btn btn-danger" style="margin-left:10px;" ng-click="remove()">삭제</button>
+        </div>
+    </li>
+</ul>
+</div>
+<form name="myform" id="myform" ng-submit="save()">
+    <fieldset>
+        <legend>New User</legend>
+        <div class="control-group">
+            <center><input type="text" placeholder="이름" ng-model="username" size="50" required/></center>
+            <center><input type="text" placeholder="비밀번호" ng-model="password" size="50" required/></center>
+            <center><input type="text" placeholder="이메일" ng-model="email" size="50" required/></center>
+        </div>
+        <p>
+            <div><center><button class="btn btn-success" type="submit">등록</button></center></div>
+        </p>
+    </fieldset>
+
+</form>
+</body>
+</html>
